@@ -1,5 +1,18 @@
+$font-family-primery: 'Clear Sans', sans-serif;
+$font-family-scondary: 'Roboto', sans-serif;
+
+$font-size: 14px;
+$font-size-primery:16px;
+$font-size-scondary:24px;
+$font-size-h3:36px;
+$font-size-h1:57px;
+ 
+
+$color-text:#3A4047; 
+$color-primery:#1AB0CE; 
 html {
   box-sizing: border-box;
+
 }
 
 *,
@@ -7,6 +20,234 @@ html {
 *::after {
   box-sizing: inherit;
 }
-.box {
+p {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  display: inline-block;
+  color: #000;
+}
+ul,
+li {
+  font-size: 16px;
+  display: inline-block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ul {
+  font-size: 0;
+  display: table;
+}
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
   display: flex;
+  flex-direction: column;
+}
+.header__top {
+  display: flex;
+  justify-content: space-between;
+  padding: 17px 0 19px;
+}
+.header__logo {
+}
+.header__contant {
+  max-width: 375px;
+  text-align: center;
+  p {
+    margin-bottom: 11px;
+  }
+  span {
+  }
+}
+.header__info,
+.header__box-top {
+  display: flex;
+  justify-content: space-between;
+}
+.header__info-box {
+  min-width: 343px;
+  margin-right: 19px;
+}
+.header__box-top {
+  text-decoration-line: underline;
+  margin-bottom: 22px;
+}
+.text-user {
+  padding-left: 19px;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    background-image: url(../images/user.png);
+    width: 14px;
+    height: 15px;
+    left: 0;
+  }
+}
+.text-post {
+}
+.header__box-bottom {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  .icon-facebook {
+    margin-right: 21px;
+  }
+}
+.text-phone {
+  padding-left: 30px;
+  padding-right: 6px;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    background-image: url(../images/phone.png);
+    width: 21.89px;
+    height: 21.89px;
+    left: 0;
+  }
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   background-image: url(../images/phone-btn.png);
+  //   width: 20px;
+  //   height: 20px;
+  //   right: 0;
+  //   &:hover{
+  //     background-color: #ccc;
+  //   }
+  // }
+}
+.phone-btn {
+  width: 20px;
+  height: 20px;
+  &:hover .box-telefon {
+    display: block;
+    position: absolute;
+  }
+}
+.box-telefon {
+  display: none;
+  padding: 31px 20px 13px 20px;
+  background-color: #fff; 
+  box-shadow: 0px 4px 45px rgba(0, 0, 0, 0.15);
+  max-width: 219px;
+  min-height: 167px;
+  z-index: 5;
+  top: 42px;
+  right: -12px;
+  position: relative;
+  li {
+    display: block;
+    a {
+      padding: 0px 20px 25px 45px;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        left: 0;
+      }
+    }
+  }
+  &::before  {
+    content: "";
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    background-color: #fff; 
+    transform: rotate(-45deg);
+    top: -3px;
+    right: 6px;
+    z-index: 1;
+  }
+}
+// .box {
+//   position: absolute;
+//   width: 28px;
+//   height: 28px;
+//   background-color: #fff;
+//   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+//   transform: rotate(-45deg);
+//   top: -3px;
+//   right: 6px;
+//   z-index: 1;
+// }
+.i-vodafon,
+.i-kievstar,
+.i-lifacel {
+  background-repeat: no-repeat;
+}
+.i-vodafon {
+  background-image: url(../images/vodafon.png);
+}
+.i-kievstar {
+  background-image: url(../images/kevstar.png);
+}
+.i-lifacel {
+  background-image: url(../images/lifecel.png);
+}
+.header__info-shop {
+  position: relative;
+}
+.icon-shop {
+}
+.shop-number {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    background-image: url(../images/shop-number.png);
+    width: 30px;
+    height: 30px;
+    right: -8px;
+    top: -8px;
+  }
+}
+.menu-contant {
+  text-transform: uppercase;
+  li a {
+    padding: 16px 49px 19px 0;
+    &:hover {
+      color: #1ab0ce;
+      border-top: 1px solid #1ab0ce;
+    }
+  }
+  li + li > a {
+    padding-right: 39px;
+    padding-left: 32px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      border-left: 1px solid #e8edf2;
+      height: 13px;
+      width: 1px;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+    }
+  }
+  .search {
+    padding-right: 0;
+    padding-left: 25px;
+    &:hover {
+      border: none;
+    }
+  }
+}
+.menu {
+}
+.menu-text {
+  .menu-text + .menu-text {
+  }
 }
