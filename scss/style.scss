@@ -16,7 +16,9 @@ $color-primery: #1ab0ce;
 html {
   box-sizing: border-box;
 }
-
+span {
+  display: block;
+}
 *,
 *::before,
 *::after {
@@ -28,7 +30,6 @@ body {
   font-weight: normal;
   line-height: $line-height;
 }
-
 p,
 h1,
 h2,
@@ -72,6 +73,9 @@ ul {
 }
 .header__logo {
 }
+.logo {
+  display: block;
+}
 .header__contant {
   max-width: 375px;
   text-align: center;
@@ -113,7 +117,7 @@ ul {
 }
 .text-post {
 }
-.header__box-bottom {
+.contact-box {
   display: flex;
   justify-content: flex-end;
   position: relative;
@@ -121,7 +125,7 @@ ul {
     margin-right: 21px;
   }
 }
-.text-phone {
+.contact-phone {
   padding-left: 30px;
   padding-right: 6px;
   position: relative;
@@ -134,7 +138,7 @@ ul {
     left: 0;
   }
 }
-.phone-btn {
+.contact-btn {
   width: 20px;
   height: 20px;
   &:hover .box-telefon {
@@ -142,6 +146,7 @@ ul {
     position: absolute;
   }
 }
+
 .box-telefon {
   display: none;
   padding: 31px 0 13px 20px;
@@ -152,8 +157,6 @@ ul {
   max-width: 219px;
   min-height: 167px;
   z-index: 5;
-  top: 42px;
-  right: -12px;
   position: relative;
   li {
     display: block;
@@ -169,6 +172,8 @@ ul {
       }
     }
   }
+}
+.header-telefons {
   &::before {
     content: "";
     position: absolute;
@@ -181,6 +186,29 @@ ul {
     z-index: 1;
   }
 }
+
+.footer-telefons {
+  &::before {
+    content: "";
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    background-color: #fff;
+    transform: rotate(-45deg);
+    bottom: -3px;
+    right: 6px;
+    z-index: 1;
+  }
+}
+.header-telefons {
+  top: 42px;
+  right: -12px;
+}
+.footer-telefons {
+  top: -200px;
+  right: -12px; 
+}
+
 .i-vodafon,
 .i-kievstar,
 .i-lifacel {
@@ -343,6 +371,9 @@ ul {
     a {
       line-height: 18px;
       font-size: $font-size;
+      &:hover {
+        color: $color-primery;
+      }
     }
   }
   li + li {
@@ -425,4 +456,78 @@ ul {
     font-size: $font-size-primery;
     line-height: 22px;
   }
+}
+
+.footer {
+  padding-top: 20px;
+  padding-bottom: 24px;
+  background: #f7f7f7;
+  box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.05);
+}
+.footer__content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.footer__content-logo {
+}
+.copy {
+  padding-top: 10px;
+}
+.footer__content-info {
+  max-width: 261px;
+  p {
+    margin-bottom: 30px;
+  }
+}
+.footer__content-list {
+  li {
+    display: block;
+    a {
+      text-decoration: underline;
+      &:hover{
+        color: $color-primery ;
+      }
+    }
+  }
+  li + li {
+    padding-top: 16px;
+  }
+}
+.footer__content-contacts {
+  text-align: right;
+}
+.header__box-bottom {
+}
+.contact-box {
+}
+.icon-facebook {
+}
+.contact-phone {
+}
+.contact-btn {
+}
+.box-telefon {
+}
+.i-vodafon {
+}
+.i-kievstar {
+}
+.i-lifacel {
+}
+.contact-text {
+  padding-top: 21px;
+  margin-bottom: 33px;
+  text-decoration: underline;
+  
+  &:hover{
+    color: $color-primery ;
+  }
+}
+.Develop{
+  display: block;
+  margin-left: auto;
+  // width: 100%;
+  // height: 16px;
+  // max-width: 153px;
 }
