@@ -164,7 +164,7 @@ ul {
   &::before {
     content: "";
     position: absolute;
-    background-image: url(../images/phone.png);
+    background-image: url(../images/phone.svg);
     width: 21.89px;
     height: 21.89px;
     left: 0;
@@ -178,9 +178,11 @@ ul {
     position: absolute;
   }
 }
-
+.box{
+padding-top: 20px;
+}
 .box-telefon {
-  display: none;
+  display: none; 
   padding: 31px 0 13px 20px;
   background-color: #fff;
   box-shadow: 0px 4px 45px rgba(0, 0, 0, 0.15);
@@ -234,7 +236,7 @@ ul {
   }
 }
 .header-telefons {
-  top: 42px;
+  top: 41px;
   right: -12px;
 }
 .footer-telefons {
