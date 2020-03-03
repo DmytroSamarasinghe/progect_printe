@@ -1,3 +1,5 @@
+@import "fonts";
+
 $font-family-primery: "Clear Sans", sans-serif;
 $font-family-scondary: "Roboto", sans-serif;
 
@@ -13,7 +15,10 @@ $line-height-h2: 32px;
 $line-height-h1: 49px;
 $line-height-title: 77px;
 
-$font-weight-bold: 700;
+@mixin f700 {
+  font-family: "Clear Sans", sans-serif;
+  font-weight: 700;
+}
 
 $color-text: #3a4047;
 $color-primery: #1ab0ce;
@@ -123,7 +128,7 @@ ul {
   }
   span {
     font-size: $font-size;
-    font-weight: 700;
+    @include f700;
     line-height: 19px;
   }
 }
@@ -164,7 +169,7 @@ ul {
 .contact-phone {
   font-size: $font-size-h3;
   line-height: $line-height-h3;
-  font-weight: $font-weight-bold;
+  @include f700;
   padding-left: 30px;
   padding-right: 6px;
   position: relative;
@@ -297,14 +302,14 @@ ul {
 .menu-contant {
   text-transform: uppercase;
   display: flex;
+  justify-content: space-between;
   li a {
     font-size: $font-size-h3;
     line-height: $line-height-h3;
-    padding: 16px 49px 19px 0;
+    padding: 16px 30px 19px 0;
   }
   li + li > a {
-    padding-right: 41px;
-    padding-left: 33px;
+    padding-left: 30px;
     position: relative;
     &::before {
       content: "";
@@ -343,7 +348,7 @@ ul {
   }
   .search {
     padding-right: 0;
-    padding-left: 30px;
+    padding-left: 25px;
     &:hover {
       border: none;
     }
@@ -363,7 +368,7 @@ ul {
 .menu-text {
   font-size: $font-family-primery;
   line-height: 22px;
-  font-weight: 700;
+  @include f700;
   transition: all, 0.3s;
   border-top: 1px solid transparent;
   &:hover {
@@ -387,7 +392,7 @@ ul {
 .big-image__contant-h1 {
   font-size: $font-size-title;
   line-height: $line-height-title;
-  font-weight: 700;
+  @include f700;
   padding-bottom: 25px;
   margin-bottom: 15px;
   position: relative;
@@ -444,7 +449,7 @@ ul {
 }
 .production-wrapper__title {
   font-size: $font-size-h3;
-  font-weight: 700;
+  @include f700;
   line-height: $line-height-h3;
   text-transform: uppercase;
   margin-bottom: 24px;
@@ -592,24 +597,19 @@ ul {
 @media (max-width: 1300px) {
   .menu-contant {
     li + li > a {
-      padding-right: 37px;
-      padding-left: 32px;
+      padding-left: 25px;
     }
-  }
-  .footer {
-    // padding-left: 25px;
-    // padding-right: 25px;
   }
 }
 @media (max-width: 1200px) {
   .menu-contant {
     justify-content: flex-end;
     li a {
-      padding-left: 20px;
+      padding: 16px 20px 19px 0;
     }
     li + li > a {
-      padding-right: 20px;
       padding-left: 20px;
+      padding-right: 20px;
     }
     li:first-child > a {
       padding-right: 20px;
@@ -621,7 +621,7 @@ ul {
     padding-left: 20px;
     padding-right: 10px;
   }
-  .header__logo{
+  .header__logo {
     margin-right: 15px;
   }
 }
