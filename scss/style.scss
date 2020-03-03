@@ -25,6 +25,13 @@ html {
 *::after {
   box-sizing: inherit;
 }
+html,
+body {
+  height: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+
 body {
   font-family: $font-family-primery;
   font-size: $font-size;
@@ -61,7 +68,7 @@ ul {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 10px; 
+  padding: 0 10px;
 }
 .Shape {
   position: fixed;
@@ -173,30 +180,41 @@ ul {
 .contact-btn {
   width: 20px;
   height: 20px;
-  &:hover .box-telefon {
-    display: block;
-    position: absolute;
+  position: relative;
+  &:hover .contact-btn__menu {
+    padding-top: 15px;
+    height: auto;
+    overflow: hidden;
+    border-width: 1px;
   }
 }
-.box{
-padding-top: 20px;
+.contact-btn__menu {
+  position: absolute;
+  top: 20px;
+  right: -20px;
+  height: 0;
+  overflow: hidden;
+  box-shadow: 0;
 }
-.box-telefon {
-  display: none; 
-  padding: 31px 0 13px 20px;
+.contact-btn__menu-box {
+  margin: 20px;
   background-color: #fff;
   box-shadow: 0px 4px 45px rgba(0, 0, 0, 0.15);
-  font-size: $font-size-h3;
-  line-height: 22px;
-  max-width: 219px;
+  width: 219px;
   min-height: 167px;
   z-index: 5;
   position: relative;
+  ul {
+    padding: 31px 8px 13px 20px;
+  }
   li {
     display: block;
     font-size: $font-size-h3;
     a {
-      padding: 0px 20px 25px 45px;
+      font-size: $font-size-h3;
+      line-height: 22px;
+      padding: 0px 20px 5px 45px;
+      margin-bottom: 20px;
       position: relative;
       &::before {
         content: "";
@@ -221,7 +239,6 @@ padding-top: 20px;
     z-index: 1;
   }
 }
-
 .footer-telefons {
   &::before {
     content: "";
@@ -235,13 +252,16 @@ padding-top: 20px;
     z-index: 1;
   }
 }
-.header-telefons {
-  top: 41px;
-  right: -12px;
-}
-.footer-telefons {
-  top: -200px;
-  right: -12px;
+.footer__content-contacts {
+  .contact-btn__menu {
+    top: -234px;
+    right: -25px;
+  }
+  .contact-btn__menu-box {
+    margin: 15px;
+    margin-bottom: 25px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+  }
 }
 
 .i-vodafon,
@@ -298,6 +318,29 @@ padding-top: 20px;
       margin: auto 0;
     }
   }
+  li:last-child {
+    margin-left: auto;
+  }
+  li {
+    &:last-child > a {
+      &::before {
+        border-left: none;
+      }
+    }
+    &:nth-last-child(2) > a {
+      &::after {
+        content: "";
+        position: absolute;
+        border-right: 1px solid #e8edf2;
+        height: 13px;
+        width: 1px;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+      }
+    }
+  }
   .search {
     padding-right: 0;
     padding-left: 30px;
@@ -333,6 +376,7 @@ padding-top: 20px;
   min-height: 500px;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   text-align: center;
 }
 .big-image__contant {
@@ -445,7 +489,7 @@ padding-top: 20px;
 
 .news {
   text-align: center;
-  margin-bottom: 29px; 
+  margin-bottom: 29px;
 }
 .news__contant-title {
   margin-bottom: 50px;
@@ -481,12 +525,12 @@ padding-top: 20px;
 }
 .news__link {
   margin-bottom: 20px;
-} 
+}
 .button-link {
   border: 1px solid $color-primery;
   border-radius: 2px;
   padding: 6px 12px 9px;
-  transition: all, 0.6s; 
+  transition: all, 0.6s;
   &:hover {
     transform: scale(1.2);
     font-size: $font-size-h3;
@@ -545,15 +589,30 @@ padding-top: 20px;
   margin-left: auto;
 }
 
+@media (max-width: 1300px) {
+  .menu-contant {
+    li + li > a {
+      padding-right: 37px;
+      padding-left: 32px;
+    }
+  }
+  .footer {
+    // padding-left: 25px;
+    // padding-right: 25px;
+  }
+}
 @media (max-width: 1200px) {
   .menu-contant {
-    justify-content: center;
+    justify-content: flex-end;
     li a {
       padding-left: 20px;
     }
     li + li > a {
       padding-right: 20px;
       padding-left: 20px;
+    }
+    li:first-child > a {
+      padding-right: 20px;
     }
   }
   .production-wrapper {
@@ -638,7 +697,6 @@ padding-top: 20px;
     display: none;
   }
 }
-
 @media (max-width: 735px) {
   .big-image__contant-h1 {
     font-size: 36px;
@@ -682,6 +740,9 @@ padding-top: 20px;
   }
 }
 @media (max-width: 520px) {
+  .logo {
+    width: 150px;
+  }
   .footer__content {
     flex-direction: column;
   }
@@ -693,11 +754,6 @@ padding-top: 20px;
   }
   .footer__content-info p {
     margin-bottom: 5px;
-  }
-}
-@media (min-width: 1024px) {
-  .menu ul {
-    display: block !important;
   }
 }
 @media (min-width: 1025px) {
