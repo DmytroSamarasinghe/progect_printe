@@ -1,7 +1,5 @@
-@import "fonts";
-
-$font-family-primery: "Clear Sans", sans-serif;
-$font-family-scondary: "Roboto", sans-serif;
+$font-family-primery: 'Clear Sans', sans-serif;
+$font-family-scondary: 'Roboto', sans-serif;
 
 $font-size: 14px;
 $font-size-h3: 16px;
@@ -11,12 +9,12 @@ $font-size-title: 57px;
 
 $line-height: 19px;
 $line-height-h3: 22px;
-$line-height-h2: 32px;
+$line-height-h2: 28px;
 $line-height-h1: 49px;
-$line-height-title: 77px;
+$line-height-title: 67px;
 
 @mixin f700 {
-  font-family: "Clear Sans", sans-serif;
+  font-family: 'Clear Sans', sans-serif;
   font-weight: 700;
 }
 
@@ -42,6 +40,7 @@ body {
   font-size: $font-size;
   font-weight: normal;
   line-height: $line-height;
+  color: $color-text;
 }
 p,
 h1,
@@ -56,7 +55,7 @@ h6 {
 a {
   text-decoration: none;
   display: inline-block;
-  color: #000;
+  color: $color-text;
 }
 ul,
 li {
@@ -76,18 +75,18 @@ ul {
   padding: 0 10px;
 }
 .Shape {
-  position: fixed;
-  right: 10px;
+  position: fixed; 
+  right: 13%;
   bottom: 20px;
   width: 108px;
   height: 108px;
   border-radius: 50%;
   background-color: $color-primery;
+  text-align: center;
   z-index: 10;
   span {
+    line-height: 16px;
     top: 46px;
-    left: 15px;
-    right: 15px;
     color: #fff;
     position: relative;
     &::before {
@@ -109,7 +108,7 @@ ul {
 .header__top {
   display: flex;
   justify-content: space-between;
-  padding: 17px 0 19px;
+  padding: 17px 0 12px;
 }
 .header__logo {
   margin-right: 30px;
@@ -124,12 +123,12 @@ ul {
   p {
     margin-bottom: 11px;
     font-size: $font-size-h3;
-    line-height: 22px;
+    line-height: 19px;
   }
   span {
     font-size: $font-size;
     @include f700;
-    line-height: 19px;
+    line-height: 16px;
   }
 }
 .header__info,
@@ -140,10 +139,14 @@ ul {
 .header__info-box {
   min-width: 343px;
   margin-right: 19px;
+  padding-top: 10px;
 }
 .header__box-top {
   text-decoration-line: underline;
   margin-bottom: 22px;
+  a {
+    line-height: 16px;
+  }
 }
 .text-user {
   padding-left: 19px;
@@ -168,7 +171,6 @@ ul {
 }
 .contact-phone {
   font-size: $font-size-h3;
-  line-height: $line-height-h3;
   @include f700;
   padding-left: 30px;
   padding-right: 6px;
@@ -195,8 +197,8 @@ ul {
 }
 .contact-btn__menu {
   position: absolute;
-  top: 20px;
-  right: -20px;
+  top: 6px;
+  right: -28px;
   height: 0;
   overflow: hidden;
   box-shadow: 0;
@@ -217,9 +219,8 @@ ul {
     font-size: $font-size-h3;
     a {
       font-size: $font-size-h3;
-      line-height: 22px;
-      padding: 0px 20px 5px 45px;
-      margin-bottom: 20px;
+      padding: 0px 20px 9px 45px;
+      margin-bottom: 16px;
       position: relative;
       &::before {
         content: "";
@@ -301,15 +302,15 @@ ul {
 }
 .menu-contant {
   text-transform: uppercase;
-  display: flex;
+  // display: flex;
   justify-content: space-between;
   li a {
     font-size: $font-size-h3;
-    line-height: $line-height-h3;
-    padding: 16px 30px 19px 0;
+    // padding: 16px 30px 19px 0;
+    padding: 16px 40px 19px 0;
   }
   li + li > a {
-    padding-left: 30px;
+    padding-left: 35px;
     position: relative;
     &::before {
       content: "";
@@ -324,13 +325,17 @@ ul {
     }
   }
   li:last-child {
-    margin-left: auto;
+    // margin-left: auto;
+    padding-right: 0;
   }
   li {
     &:last-child > a {
       &::before {
         border-left: none;
       }
+    }
+    &:nth-last-child(2){
+      // margin-right: auto;
     }
     &:nth-last-child(2) > a {
       &::after {
@@ -366,8 +371,6 @@ ul {
   margin-bottom: 4px;
 }
 .menu-text {
-  font-size: $font-family-primery;
-  line-height: 22px;
   @include f700;
   transition: all, 0.3s;
   border-top: 1px solid transparent;
@@ -393,7 +396,7 @@ ul {
   font-size: $font-size-title;
   line-height: $line-height-title;
   @include f700;
-  padding-bottom: 25px;
+  padding-bottom: 10px;
   margin-bottom: 15px;
   position: relative;
   &::after {
@@ -415,7 +418,6 @@ ul {
 }
 .big-image__contant-link {
   font-size: $font-size-h3;
-  line-height: $line-height-h3;
   color: #fff;
   background: #1ab0ce;
 }
@@ -430,7 +432,7 @@ ul {
 .special-h1 {
   text-align: center;
   font-size: 36px;
-  line-height: 49px;
+  line-height: 42px;
 }
 .production__contant-wrap {
   display: flex;
@@ -450,7 +452,6 @@ ul {
 .production-wrapper__title {
   font-size: $font-size-h3;
   @include f700;
-  line-height: $line-height-h3;
   text-transform: uppercase;
   margin-bottom: 24px;
 }
@@ -462,8 +463,7 @@ ul {
   li {
     display: block;
     a {
-      line-height: 18px;
-      font-size: $font-size;
+      line-height: 16px;
       &:hover {
         color: $color-primery;
       }
@@ -485,7 +485,7 @@ ul {
 .special-h2 {
   text-align: center;
   font-size: 24px;
-  line-height: 32px;
+  line-height: 28px;
   font-weight: 400;
 }
 .info__content-h2 {
@@ -511,6 +511,7 @@ ul {
 .inner-date {
   color: #bec7d1;
   position: absolute;
+  line-height: 16px;
   top: 29px;
   left: 0;
   right: 0;
@@ -519,7 +520,6 @@ ul {
   position: relative;
   padding: 60px 18px 31px 14px;
   font-size: 16px;
-  line-height: 22px;
   z-index: 2;
   transition: all, 0.2s;
   &:hover {
@@ -530,16 +530,19 @@ ul {
 }
 .news__link {
   margin-bottom: 20px;
+  line-height: 16px;
+  &.button-link {
+    padding: 6px 21px 9px;
+  }
 }
 .button-link {
   border: 1px solid $color-primery;
   border-radius: 2px;
-  padding: 6px 12px 9px;
+  padding: 12px 22px 15px;
   transition: all, 0.6s;
   &:hover {
     transform: scale(1.2);
     font-size: $font-size-h3;
-    line-height: 22px;
   }
 }
 
@@ -560,13 +563,17 @@ ul {
 .footer__content-info {
   max-width: 261px;
   p {
+    font-family: 'Roboto', sans-serif;
     margin-bottom: 30px;
+    line-height: 21px;
   }
 }
 .footer__content-list {
   li {
     display: block;
     a {
+      font-family: 'Roboto', sans-serif;
+      line-height: 21px;
       text-decoration: underline;
       &:hover {
         color: $color-primery;
@@ -583,6 +590,8 @@ ul {
 .contact-text {
   padding-top: 21px;
   margin-bottom: 33px;
+  line-height: 21px;
+  font-family: 'Roboto', sans-serif;
   text-decoration: underline;
 
   &:hover {
@@ -594,32 +603,43 @@ ul {
   margin-left: auto;
 }
 
-@media (max-width: 1300px) {
-  .menu-contant {
-    li + li > a {
-      padding-left: 25px;
-    }
+@media (max-width: 1800px) {
+  .Shape {
+    right: 10%
+  }
+}
+@media (max-width: 1500px) {
+  .Shape {
+    right: 8%
+  }
+}
+@media (max-width: 1250px) {
+  .menu-contant li + li > a {
+    padding-left: 25px;
+  }
+  .menu-contant li a {
+    padding: 16px 25px 19px 0;
   }
 }
 @media (max-width: 1200px) {
   .menu-contant {
-    justify-content: flex-end;
+    // justify-content: flex-end;
     li a {
-      padding: 16px 20px 19px 0;
+      // padding: 16px 20px 19px 0;
     }
     li + li > a {
-      padding-left: 20px;
-      padding-right: 20px;
+      // padding-left: 20px;
+      // padding-right: 20px;
     }
     li:first-child > a {
-      padding-right: 20px;
+      // padding-right: 20px;
     }
   }
   .production-wrapper {
     min-width: 45%;
     margin-bottom: 20px;
-    padding-left: 20px;
-    padding-right: 10px;
+    // padding-left: 20px;
+    // padding-right: 10px;
   }
   .header__logo {
     margin-right: 15px;
@@ -677,11 +697,11 @@ ul {
     width: 100%;
     li,
     li + li > a {
-      padding-left: 0;
-      padding-right: 0;
+      // padding-left: 0;
+      // padding-right: 0;
       a {
-        padding-left: 0;
-        padding-right: 0;
+        // padding-left: 0;
+        // padding-right: 0;
       }
     }
     .search {
@@ -695,6 +715,7 @@ ul {
   }
   .production__contant-text {
     padding: 0 15px;
+    line-height: 16px;
   }
   .footer__content-list {
     display: none;
